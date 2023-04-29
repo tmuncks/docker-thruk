@@ -1,0 +1,24 @@
+services:
+  # logcache database
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      - TZ=America/Nuuk
+      - MYSQL_DATABASE=thrukdb
+      - MYSQL_USER=thrukdbuser
+      - MYSQL_PASSWORD=password
+
+  # thruk itself
+  thruk:
+    image: tmuncks/thruk
+    depends_on:
+      - db
+    restart: always
+    environment:
+      - TZ=America/Nuuk
+      - LOGCACHE=mysql://thrukdbuser:password@db:3306/thrukdb
+    volumes:
+      - ./thruk:/etc/thruk/thruk_local.d:ro
+    ports:
+      - 8080:80
