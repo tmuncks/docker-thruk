@@ -40,7 +40,6 @@ thruk_1  |
 thruk_1  | ### The password for thrukadmin has been set to: Co#hoo6wi1oe
 thruk_1  | 
 ...
-
 ```
 
 ### Configuration
@@ -49,7 +48,7 @@ Files (`*.conf`) can be put in `/etc/thruk/thruk_local.d` via mounts, as an easy
 ### Persistence
 Anonymous volumes have been put in place to persist configuration (`/etc/thruk`) and data (`/var/lib/thruk`).
 
-These paths can of course be mounted on named volumes for better visibility etc.
+These paths can be mounted on named volumes for better control, visibility etc.
 
 ### Documentation
 The actual Thruk Documentation can be found [here](https://www.thruk.org/documentation/).

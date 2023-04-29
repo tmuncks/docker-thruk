@@ -5,6 +5,7 @@ services:
     restart: always
     environment:
       - TZ=America/Nuuk
+      - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=thrukdb
       - MYSQL_USER=thrukdbuser
       - MYSQL_PASSWORD=password
