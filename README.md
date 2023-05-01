@@ -28,6 +28,7 @@ services:
     environment:
       - TZ=America/Nuuk
       - LOGCACHE=mysql://thrukdbuser:password@db:3306/thrukdb
+      - RUNCRON=1
     volumes:
       - /etc/thruk
       - /var/lib/thruk
@@ -47,6 +48,16 @@ thruk_1  | ### The password for thrukadmin has been set to: Co#hoo6wi1oe
 thruk_1  | 
 ...
 ```
+
+### Environment
+
+#### `LOGCACHE`
+Defines the database connection to the logcache database.
+
+This sets the Thruk `logcache` config option.
+
+#### `RUNCRON`
+Set to `1` to run cron inside the image. This is needed for scheduled reports etc.
 
 ### Configuration
 Files (`*.conf`) can be put in `/etc/thruk/thruk_local.d` via mounts, as an easy way to drop configuration snippets in the container.

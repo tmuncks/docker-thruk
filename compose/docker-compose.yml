@@ -21,6 +21,7 @@ services:
     environment:
       - TZ=America/Nuuk
       - LOGCACHE=mysql://thrukdbuser:password@db:3306/thrukdb
+      - RUNCRON=1
     volumes:
       - /etc/thruk
       - /var/lib/thruk

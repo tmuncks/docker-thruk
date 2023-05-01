@@ -18,5 +18,12 @@ if [ ! -s /etc/thruk/htpasswd ]; then
     unset PW
 fi
 
+# run cron
+if [ "$RUNCRON" == "1" ] || [ "$RUNCRON" == "yes" ] || [ "$RUNCRON" == "true" ]; then
+    echo "Updating Thruk crontab and starting cron"
+    thruk cron install
+    cron
+fi
+
 # run
 exec apache2ctl -DFOREGROUND -e info
